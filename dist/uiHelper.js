@@ -2,7 +2,7 @@ export function addProductsToGrid(grid, products) {
     products.forEach((product) => {
         const productHtml = `<a class="product" href="#">
                             <div class="product-image">
-                              <img src="${product.images[0]}">
+                              <img src=".${product.images[0]}">
                             </div>
                             <div class="product-content">
                               <div class="product-info">
