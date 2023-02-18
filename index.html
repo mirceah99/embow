@@ -5,8 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Embow</title>
+    <script type="module" src="./dist/index.js" defer></script>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>Hello Embow!!</h1>
+    <header class="header">
+      <div class="header-content">
+        <div class="header-logo">
+          <h1 class="logo">Embow</h1>
+        </div>
+        <nav class="header-navigation">
+          <img src="./assets/shopping-cart.svg" />
+          <img src="./assets/info.svg" />
+        </nav>
+      </div>
+    </header>
+    <div class="responsive-container">
+      <div class="products-grid"></div>
+    </div>
   </body>
 </html>

@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+body {
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  background-color: #fff;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: inherit;
+  font-weight: bold;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+button {
+  border: 1px solid;
+  background-color: transparent;
+}
+body {
+  font-family: "DM Sans", sans-serif;
+}
+.responsive-container {
+  max-width: 1080px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header {
+  border-bottom: 1px solid #d0d0d0;
+  min-height: 60px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: sticky;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+}
+.header + div {
+  margin-top: 70px;
+}
+.header-content {
+  display: flex;
+  width: 100%;
+  max-width: 2000px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-navigation {
+  display: flex;
+  align-items: center;
+}
+.header-navigation img {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  height: 35px;
+  border-radius: 50%;
+  padding: 5px;
+  border: 1px solid #db8fbb;
+}
+.link-button {
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  border-radius: 0.375rem;
+  padding: 0.5em 1.25em;
+  color: #fff;
+}
+.link-button i {
+  font-size: 1.25rem;
+  margin-left: 0.5rem;
+}
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+main {
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.grid-column {
+  display: flex;
+  flex-direction: column;
+}
+.grid-column > * + * {
+  margin-top: 2rem;
+}
+.product {
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-weight: 400;
+  transition: 0.15s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 0 1px #3333;
+}
+.product:hover,
+.product:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem pink;
+}
+.product:hover .product-content,
+.product:focus .product-content {
+  border-color: transparent;
+}
+.product-image {
+  border-radius: 0.25rem 0.25rem 0 0;
+  overflow: hidden;
+}
+.product-content {
+  padding: 1rem;
+  /* border-left: 1px solid #dedede;
+  border-right: 1px solid #dedede;
+  border-bottom: 1px solid #dedede; */
+  border-radius: 0 0 0.25rem 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.15s ease;
+  background-color: #fff;
+}
+.product-action {
+  color: #000;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  font-size: 1.25rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+.product-action:hover {
+  background-color: #ebebeb;
+}
+.product-info {
+  display: flex;
+  flex-direction: column;
+}
+.product-title {
+  font-size: 1.125rem;
+  line-height: 1.25;
+}
+.product-price {
+  margin-top: 0.25rem;
+}
+.credits {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10rem;
+  color: #777;
+  font-size: 0.875rem;
+}
+.credits a {
+  display: block;
+}
+.quantity-input {
+  margin-right: 10px;
+  outline: none;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  background-color: #ffd9ef5b;
+  border-radius: 25px;
+  height: 35px;
+  width: 70px;
+  padding: 0px 20px;
+  font-weight: bold;
+}
+.quantity-button {
+  height: 35px;
+  margin-right: -5px;
+}
+.quantity-section {
+  display: flex;
+}
+/* REMOVE NUMERIC ARROWS */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+@media all and (max-width: 1050px) {
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .grid-column > * + * {
+    margin-top: 1.5rem;
+  }
+}
+@media all and (max-width: 600px) {
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+  .grid-column > * + * {
+    margin-top: 1.5rem;
+  }
+}
