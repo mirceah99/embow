@@ -231,6 +231,10 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+.quantity-input,
+.quantity-button {
+  transition: visibility 0.5s, opacity 0.5s linear;
+}
 @media all and (max-width: 1050px) {
   .products-grid {
     display: grid;
