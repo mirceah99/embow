@@ -10,9 +10,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { addProductsToGrid } from "./uiHelper.js";
 import { getProducts } from "./dataManger.js";
 import Cart from "./cartImplementation.js";
+import Modal from "./modalImplementation.js";
 (function loadPage() {
     return __awaiter(this, void 0, void 0, function* () {
-        const cart = new Cart(document.querySelector(".shopping-cart"));
+        const modal = new Modal();
+        const cart = new Cart(document.querySelector(".shopping-cart"), modal);
         const products = yield getProducts(20, 0);
         const grid = document.querySelector(".products-grid");
         addProductsToGrid(grid, products, cart);

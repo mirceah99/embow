@@ -1,15 +1,19 @@
 import { productLocalStorage } from "./dataTypes";
+import Modal from "./modalImplementation";
 export default class Cart {
   static bumpDuration = 150; // ms
   private products: productLocalStorage[];
-  constructor(private htmlElement: HTMLElement) {
+  constructor(private htmlElement: HTMLElement, private modal: Modal) {
     this.products = [];
+    this.htmlElement = htmlElement;
     this.refreshCartProducts();
 
     // add bumpDuration to css
     document
       .querySelector(":root") // @ts-ignore: Unreachable code error
       ?.style.setProperty("--bump-duration", Cart.bumpDuration + "ms");
+
+    this.htmlElement.addEventListener("click", () => this.showModal());
   }
   public refreshCartBadge() {
     this.refreshCartProducts();
@@ -50,5 +54,15 @@ export default class Cart {
       () => this.htmlElement.classList.remove("bump"),
       Cart.bumpDuration
     );
+  }
+  private showModal() {
+    this.modal.showModal();
+    const content = `<ul>
+                    ${this.products.reduce(
+                      (list, product) => list + `<li>${product.text}</li>`,
+                      ""
+                    )}
+    </ul>`;
+    this.modal.modalContent.innerHTML = content;
   }
 }

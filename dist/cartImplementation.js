@@ -1,13 +1,16 @@
 export default class Cart {
-    constructor(htmlElement) {
+    constructor(htmlElement, modal) {
         var _a;
         this.htmlElement = htmlElement;
+        this.modal = modal;
         this.products = [];
+        this.htmlElement = htmlElement;
         this.refreshCartProducts();
         // add bumpDuration to css
         (_a = document
             .querySelector(":root") // @ts-ignore: Unreachable code error
         ) === null || _a === void 0 ? void 0 : _a.style.setProperty("--bump-duration", Cart.bumpDuration + "ms");
+        this.htmlElement.addEventListener("click", () => this.showModal());
     }
     refreshCartBadge() {
         this.refreshCartProducts();
@@ -48,6 +51,13 @@ export default class Cart {
     bumpBadge() {
         this.htmlElement.classList.add("bump");
         setTimeout(() => this.htmlElement.classList.remove("bump"), Cart.bumpDuration);
+    }
+    showModal() {
+        this.modal.showModal();
+        const content = `<ul>
+                    ${this.products.reduce((list, product) => list + `<li>${product.text}</li>`, "")}
+    </ul>`;
+        this.modal.modalContent.innerHTML = content;
     }
 }
 Cart.bumpDuration = 150; // ms
