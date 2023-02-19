@@ -1,3 +1,4 @@
+import { productLocalStorage } from "./dataTypes";
 export default class Product {
   private quantity: number;
   private quantityInput: HTMLInputElement;
@@ -10,12 +11,7 @@ export default class Product {
     private id: string,
     container: HTMLElement
   ) {
-    const localStorageValue = localStorage.getItem(id);
-    if (localStorageValue !== null) {
-      this.quantity = +localStorageValue;
-    } else {
-      this.quantity = 0;
-    }
+    this.quantity = this.getQuantityFromLocalStorage();
     const html = `<div class="product" href="#" id="${this.id}">
                             <div class="product-image">
                               <img src=".${this.images[0]}">
@@ -57,7 +53,7 @@ export default class Product {
   public refreshCounter() {
     this.quantity = +this.quantityInput.value;
     if (this.quantity > 0) {
-      localStorage.setItem(this.id, `${this.title} - ${this.quantity}`);
+      this.addThisProductToLocalStorage();
       this.minusButton.style.visibility = "visible";
       this.minusButton.style.opacity = "1";
       this.quantityInput.style.visibility = "visible";
@@ -80,5 +76,23 @@ export default class Product {
   }
   public triggerQuantityInputChange() {
     this.quantityInput.dispatchEvent(new Event("change"));
+  }
+  public addThisProductToLocalStorage() {
+    const productLocalStorage: productLocalStorage = {
+      text: `${this.title} - ${this.quantity}`,
+      quantity: this.quantity,
+      id: this.id,
+      isProductLocalStorage: true,
+    };
+    localStorage.setItem(this.id, JSON.stringify(productLocalStorage));
+  }
+  public getQuantityFromLocalStorage(): number {
+    let productFromLocalStorage: productLocalStorage;
+    const localStorageString = localStorage.getItem(this.id);
+    if (localStorageString !== null) {
+      productFromLocalStorage = JSON.parse(localStorageString);
+      return productFromLocalStorage.quantity;
+    }
+    return 0;
   }
 }

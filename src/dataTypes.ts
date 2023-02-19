@@ -4,3 +4,9 @@ export interface product {
   images: string[]; // array of url
   id: string;
 }
+export interface productLocalStorage {
+  quantity: number;
+  isProductLocalStorage: true;
+  text: string;
+  id: string;
+}
