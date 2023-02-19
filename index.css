@@ -235,6 +235,42 @@ input[type="number"] {
 .quantity-button {
   transition: visibility 0.5s, opacity 0.5s linear;
 }
+
+/* SHOPPING CART */
+.shopping-cart:after {
+  content: attr(value);
+  font-size: 12px;
+  background: #db8fbb;
+  border-radius: 50%;
+  padding: 3px;
+  position: relative;
+  left: -8px;
+  top: 11px;
+  opacity: 0.85;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--bump-duration);
+}
+.shopping-cart.bump:after {
+  scale: 1.5;
+}
+.shopping-cart.hide-badge:after {
+  opacity: 0;
+}
+.shopping-cart {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-right: -18px;
+  font-weight: bold;
+}
+
 @media all and (max-width: 1050px) {
   .products-grid {
     display: grid;

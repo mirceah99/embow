@@ -1,9 +1,11 @@
 export default class Product {
-    constructor(title, price, images, id, container) {
+    constructor(title, price, images, id, container, cart) {
         this.title = title;
         this.price = price;
         this.images = images;
         this.id = id;
+        this.container = container;
+        this.cart = cart;
         this.quantity = this.getQuantityFromLocalStorage();
         const html = `<div class="product" href="#" id="${this.id}">
                             <div class="product-image">
@@ -32,6 +34,8 @@ export default class Product {
         this.plusButton.addEventListener("click", () => this.incrementQuantityInput());
     }
     refreshCounter() {
+        if (+this.quantityInput.value < 0)
+            this.quantityInput.value = "0";
         this.quantity = +this.quantityInput.value;
         if (this.quantity > 0) {
             this.addThisProductToLocalStorage();
@@ -47,6 +51,7 @@ export default class Product {
             this.quantityInput.style.visibility = "hidden";
             this.quantityInput.style.opacity = "0";
         }
+        this.cart.refreshCartBadge();
     }
     incrementQuantityInput() {
         this.quantityInput.value = (this.quantity + 1).toString();

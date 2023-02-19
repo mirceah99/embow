@@ -1,4 +1,5 @@
 import { productLocalStorage } from "./dataTypes";
+import Cart from "./cartImplementation";
 export default class Product {
   private quantity: number;
   private quantityInput: HTMLInputElement;
@@ -9,7 +10,8 @@ export default class Product {
     private price: number,
     private images: string[],
     private id: string,
-    container: HTMLElement
+    private container: HTMLElement,
+    private cart: Cart
   ) {
     this.quantity = this.getQuantityFromLocalStorage();
     const html = `<div class="product" href="#" id="${this.id}">
@@ -51,6 +53,7 @@ export default class Product {
   }
 
   public refreshCounter() {
+    if (+this.quantityInput.value < 0) this.quantityInput.value = "0";
     this.quantity = +this.quantityInput.value;
     if (this.quantity > 0) {
       this.addThisProductToLocalStorage();
@@ -65,6 +68,7 @@ export default class Product {
       this.quantityInput.style.visibility = "hidden";
       this.quantityInput.style.opacity = "0";
     }
+    this.cart.refreshCartBadge();
   }
   public incrementQuantityInput() {
     this.quantityInput.value = (this.quantity + 1).toString();
