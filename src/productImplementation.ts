@@ -83,10 +83,11 @@ export default class Product {
   }
   public addThisProductToLocalStorage() {
     const productLocalStorage: productLocalStorage = {
-      text: `${this.title} - ${this.quantity}`,
+      text: `${this.title} x ${this.quantity}`,
       quantity: this.quantity,
       id: this.id,
       isProductLocalStorage: true,
+      price: this.price,
     };
     localStorage.setItem(this.id, JSON.stringify(productLocalStorage));
   }

@@ -9,4 +9,5 @@ export interface productLocalStorage {
   isProductLocalStorage: true;
   text: string;
   id: string;
+  price: number;
 }
