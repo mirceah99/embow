@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { addProductsToGrid } from "./uiHelper.js";
+import { addProductsToGrid, showInfoInit } from "./uiHelper.js";
 import { getProducts } from "./dataManger.js";
 import Cart from "./cartImplementation.js";
 import Modal from "./modalImplementation.js";
@@ -18,5 +18,6 @@ import Modal from "./modalImplementation.js";
         const products = yield getProducts(20, 0);
         const grid = document.querySelector(".products-grid");
         addProductsToGrid(grid, products, cart);
+        showInfoInit(modal);
     });
 })();

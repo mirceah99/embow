@@ -1,4 +1,4 @@
-import { addProductsToGrid } from "./uiHelper.js";
+import { addProductsToGrid, showInfoInit } from "./uiHelper.js";
 import { getProducts } from "./dataManger.js";
 import Cart from "./cartImplementation.js";
 import Modal from "./modalImplementation.js";
@@ -11,4 +11,5 @@ import Modal from "./modalImplementation.js";
   const products = await getProducts(20, 0);
   const grid = document.querySelector(".products-grid") as HTMLDivElement;
   addProductsToGrid(grid, products, cart);
+  showInfoInit(modal);
 })();

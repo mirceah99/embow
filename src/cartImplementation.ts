@@ -1,6 +1,6 @@
 import { productLocalStorage } from "./dataTypes";
 import Modal from "./modalImplementation";
-import { showToast } from "./utilities.js";
+import { showToast } from "./uiHelper.js";
 export default class Cart {
   static bumpDuration = 150; // ms
   private products: productLocalStorage[];
@@ -57,7 +57,7 @@ export default class Cart {
     );
   }
   private showModal() {
-    this.modal.showModal();
+    this.modal.show();
     const total = { price: 0, quantity: 0 };
     this.products.reduce((total, product) => {
       total.price += product.price * product.quantity;
@@ -97,7 +97,7 @@ Astept cu nerabdare raspunsul dvs pentru mai multe detalii.
                   </table>
                   <h2>Comanda:</h2>
                   <div class="order-products">
-                      <a href="mailto:embow@stickers.com?body=${encodeURIComponent(
+                      <a href="mailto:Em.bowstickers@gmail.com?body=${encodeURIComponent(
                         orderDetails
                       )}">
                       <img src="./assets/email.svg"/>
@@ -110,7 +110,7 @@ Astept cu nerabdare raspunsul dvs pentru mai multe detalii.
                       </a>
                       </div>
                   `;
-    this.modal.modalContent.innerHTML = content;
+    this.modal.content.innerHTML = content;
     const orderSms = document.getElementById("order-sms");
     orderSms?.addEventListener("click", () => {
       // if in 0.7 seconds i did not leave the page it means sms is not supported

@@ -7,9 +7,9 @@ export default class Modal {
             // @ts-ignore: Unreachable code error
             document.getElementById("modal").style.display = "none";
         };
-        this.modalContent = document.getElementById("modal-content");
+        this.content = document.getElementById("modal-content");
     }
-    showModal() {
+    show() {
         this.modal.style.display = "block";
     }
 }
