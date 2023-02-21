@@ -1,5 +1,6 @@
 import { productLocalStorage } from "./dataTypes";
 import Modal from "./modalImplementation";
+import { showToast } from "./utilities.js";
 export default class Cart {
   static bumpDuration = 150; // ms
   private products: productLocalStorage[];
@@ -103,12 +104,23 @@ Astept cu nerabdare raspunsul dvs pentru mai multe detalii.
                       <p>Prin email</p>
                       </a>
 
-                      <a href="#">
+                      <a id="order-sms" href="#">
                       <img src="./assets/phone.svg"/>
                       <p>Prin telefon</p>
                       </a>
                       </div>
                   `;
     this.modal.modalContent.innerHTML = content;
+    const orderSms = document.getElementById("order-sms");
+    orderSms?.addEventListener("click", () => {
+      // if in 0.7 seconds i did not leave the page it means sms is not supported
+      setTimeout(() => {
+        showToast("Sms nu este suportate pe acest device.");
+      }, 700);
+      //try to run sms schema
+      location.href = `sms://+40747877160?body=${encodeURIComponent(
+        orderDetails
+      )}`;
+    });
   }
 }
