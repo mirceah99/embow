@@ -1,6 +1,7 @@
 import { productLocalStorage } from "./dataTypes";
 import Modal from "./modalImplementation";
 import { showToast } from "./uiHelper.js";
+import { isIOS } from "./uiHelper.js";
 export default class Cart {
   static bumpDuration = 150; // ms
   private products: productLocalStorage[];
@@ -118,9 +119,9 @@ Astept cu nerabdare raspunsul dvs pentru mai multe detalii.
         showToast("Sms nu este suportat pe acest device.");
       }, 700);
       //try to run sms schema
-      location.href = `sms://+40747877160&body=${encodeURIComponent(
-        orderDetails
-      )}`;
+      location.href = `sms://+40747877160${
+        isIOS() ? "&" : "?"
+      }body=${encodeURIComponent(orderDetails)}`;
     });
   }
 }
