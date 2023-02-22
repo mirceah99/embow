@@ -115,10 +115,10 @@ Astept cu nerabdare raspunsul dvs pentru mai multe detalii.
     orderSms?.addEventListener("click", () => {
       // if in 0.7 seconds i did not leave the page it means sms is not supported
       setTimeout(() => {
-        showToast("Sms nu este suportate pe acest device.");
+        showToast("Sms nu este suportat pe acest device.");
       }, 700);
       //try to run sms schema
-      location.href = `sms://+40747877160?body=${encodeURIComponent(
+      location.href = `sms://+40747877160&body=${encodeURIComponent(
         orderDetails
       )}`;
     });
