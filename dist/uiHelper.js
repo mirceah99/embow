@@ -61,3 +61,22 @@ export function isIOS() {
         // iPad on iOS 13 detection
         (navigator.userAgent.includes("Mac") && "ontouchend" in document));
 }
+export function createCarousel(selector, imageUrls) {
+    const elem = $(selector);
+    const content = imageUrls.reduce((output, imageUrl) => {
+        return (output += `<div class="item"><img src="${imageUrl}"/></div>`);
+    }, "");
+    elem.addClass("owl-carousel owl-theme");
+    elem.html(content);
+    elem.owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: false,
+        dots: false,
+        responsive: {
+            0: {
+                items: 1,
+            },
+        },
+    });
+}

@@ -1,3 +1,4 @@
+import { createCarousel } from "./uiHelper.js";
 export default class Product {
     constructor(title, price, images, id, container, cart) {
         this.title = title;
@@ -9,7 +10,6 @@ export default class Product {
         this.quantity = this.getQuantityFromLocalStorage();
         const html = `<div class="product" href="#" id="${this.id}">
                             <div class="product-image">
-                              <img src=".${this.images[0]}">
                             </div>
                             <div class="product-content">
                               <div class="product-info">
@@ -24,6 +24,8 @@ export default class Product {
                             </div>
                             </div>`;
         container.insertAdjacentHTML("beforeend", html);
+        // add carousel
+        createCarousel(`#${this.id} .product-image`, this.images);
         this.quantityInput = document.querySelector(`#${this.id} .quantity-input`);
         this.quantityInput.value = this.quantity.toString();
         this.minusButton = document.querySelector(`#${this.id} .minus`);

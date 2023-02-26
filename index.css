@@ -65,6 +65,7 @@ body {
   top: 0;
   width: 100%;
   background-color: white;
+  z-index: 2;
 }
 .header + div {
   margin-top: 70px;
@@ -294,6 +295,10 @@ input[type="number"] {
   width: 80%;
 }
 
+.modal-content-limits {
+  max-height: 90%;
+  overflow: scroll;
+}
 /* The Close Button */
 .close {
   color: #aaaaaa;

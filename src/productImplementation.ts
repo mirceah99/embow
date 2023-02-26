@@ -1,5 +1,6 @@
 import { productLocalStorage } from "./dataTypes";
 import Cart from "./cartImplementation";
+import { createCarousel } from "./uiHelper.js";
 export default class Product {
   private quantity: number;
   private quantityInput: HTMLInputElement;
@@ -16,7 +17,6 @@ export default class Product {
     this.quantity = this.getQuantityFromLocalStorage();
     const html = `<div class="product" href="#" id="${this.id}">
                             <div class="product-image">
-                              <img src=".${this.images[0]}">
                             </div>
                             <div class="product-content">
                               <div class="product-info">
@@ -32,6 +32,8 @@ export default class Product {
                             </div>`;
     container.insertAdjacentHTML("beforeend", html);
 
+    // add carousel
+    createCarousel(`#${this.id} .product-image`, this.images);
     this.quantityInput = document.querySelector(
       `#${this.id} .quantity-input`
     ) as HTMLInputElement;
