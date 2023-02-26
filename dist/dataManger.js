@@ -56,6 +56,12 @@ export function getProducts(numberOfProducts, page) {
                 images: ["./img/jelly/1.jpg", "./img/jelly/2.jpg"],
                 id: "id-1d450a85-3be8-4d7a-a262-87ad39449665",
             },
+            {
+                title: "Magical Astronaut",
+                price: 5,
+                images: ["./img/magical-astronaut/1.jpg"],
+                id: "id-7d849159-b5d4-45f8-bf9f-4b031aac96fc",
+            },
         ];
     });
 }
