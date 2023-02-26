@@ -7,19 +7,27 @@ export async function getProducts(
     {
       title: "Carrot",
       price: 3,
-      images: ["/img/carrot/1.png", "/img/carrot/2.png", "/img/carrot/3.webp"],
+      images: [
+        "./img/carrot/1.png",
+        "./img/carrot/2.png",
+        "./img/carrot/3.webp",
+      ],
       id: "gfyuaiuweorf",
     },
     {
       title: "Tomato",
       price: 5,
-      images: ["/img/tomato/1.jpg", "/img/tomato/2.webp", "/img/tomato/3.jpg"],
+      images: [
+        "./img/tomato/1.jpg",
+        "./img/tomato/2.webp",
+        "./img/tomato/3.jpg",
+      ],
       id: "gfyuaiuwexxxf",
     },
     {
       title: "Cosmonaut",
       price: 10,
-      images: ["/img/cosmonaut/1.webp"],
+      images: ["./img/cosmonaut/1.webp"],
       id: "gfyuaiyyexxxf",
     },
   ];
