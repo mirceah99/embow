@@ -56,6 +56,12 @@ export async function getProducts(
       images: ["./img/magical-astronaut/1.JPG"],
       id: "id-7d849159-b5d4-45f8-bf9f-4b031aac96fc",
     },
+    {
+      title: "Nature",
+      price: 5,
+      images: ["./img/nature/1.JPG"],
+      id: "id-d1e24ac7-41f5-4247-8c20-9064694a86d0",
+    },
     
   ];
 }
