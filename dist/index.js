@@ -19,5 +19,6 @@ import Modal from "./modalImplementation.js";
         const grid = document.querySelector(".products-grid");
         addProductsToGrid(grid, products, cart);
         showInfoInit(modal);
+        //TODO remove deleted products from cart
     });
 })();
