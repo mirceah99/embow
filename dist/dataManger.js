@@ -68,6 +68,24 @@ export function getProducts(numberOfProducts, page) {
                 images: ["./img/nature/1.JPG"],
                 id: "id-d1e24ac7-41f5-4247-8c20-9064694a86d0",
             },
+            {
+                title: "Anime girl",
+                price: 5,
+                images: ["./img/anime-girl/1.JPG"],
+                id: "id-e9d8240b-374f-4df4-b543-4966b4dd0ee8",
+            },
+            {
+                title: "Teacat",
+                price: 5,
+                images: ["./img/teacat/1.JPG", "./img/teacat/2.JPG"],
+                id: "id-e4ff7d46-7954-4aaf-a822-07079d61230e",
+            },
+            {
+                title: "Wednesday",
+                price: 6,
+                images: ["./img/wednesday/1.JPG"],
+                id: "id-0a71f28b-28e2-4077-b615-dbdfcce33430",
+            },
         ];
     });
 }
