@@ -65,17 +65,17 @@ export default class Cart {
       total.quantity += product.quantity;
       return total;
     }, total);
-    const orderDetails = `Hello!🤗🤗  #embow-store
-Imi doresc sa comand urmatoarele produse:
+    const orderDetails = `Hello!🤗🤗 #embow-store
+Îmi doresc să comand următoarele produse:
 ${this.products.reduce(
   (list, product) =>
-    list + `${product.text} ${product.quantity * product.price} RON \n`,
+    list + `${product.text} — ${product.quantity * product.price} RON \n`,
   ""
 )}
 -------------------------------
-Total:${total.quantity}(produse) ... ${total.price} RON
+Total: ${total.quantity}(produse) — ${total.price} RON
 
-Astept cu nerabdare raspunsul dvs pentru mai multe detalii.
+Aștept cu nerăbdare răspunsul dvs. pentru mai multe detalii.
     `;
     const content = `
                     <h2>Ai selectat urmatoare produse:</h2>
