@@ -102,12 +102,12 @@ Aștept cu nerăbdare răspunsul dvs. pentru mai multe detalii.
                         orderDetails
                       )}">
                       <img src="./assets/email.svg"/>
-                      <p>Prin email</p>
+                      <p>Email</p>
                       </a>
 
                       <a id="order-sms" href="#">
                       <img src="./assets/phone.svg"/>
-                      <p>Prin telefon</p>
+                      <p>Telefon</p>
                       </a>
                       </div>
                   `;
