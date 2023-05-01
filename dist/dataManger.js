@@ -95,7 +95,7 @@ export function getProducts(numberOfProducts, page) {
             {
                 title: "Avocuddles",
                 price: 5,
-                images: ["./img/avocuddles/1.JPG", ".img/avocuddles/2.JPG"],
+                images: ["./img/avocuddles/1.JPG", "./img/avocuddles/2.JPG"],
                 id: "id-50b33132-411e-42d5-88b4-f79d1bc1ab1b",
             },
             {
