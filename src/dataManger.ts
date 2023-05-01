@@ -80,5 +80,25 @@ export async function getProducts(
       images: ["./img/wednesday/1.JPG"],
       id: "id-0a71f28b-28e2-4077-b615-dbdfcce33430",
     },
-  ];
+
+{
+  title: "Jupiter Cat",
+  price: 4,
+  images: ["./img/jupiter-cat/1.jpeg"],
+  id: "id-3cf29428-a079-43bd-9f8a-b3778d360ba7",
+},
+{
+  title: "Avocuddles",
+  price: 5,
+  images: ["./img/avocuddles/1.JPG",".img/avocuddles/2.JPG"],
+  id: "id-50b33132-411e-42d5-88b4-f79d1bc1ab1b",
+},
+{
+  title: "Cute faces",
+  price: 7,
+  images: ["./img/cute-faces/1.JPG"],
+  id: "id-d34734fc-def8-4994-9c72-42937108fd75",
+},
+  ]
+  ;
 }
