@@ -104,6 +104,24 @@ export function getProducts(numberOfProducts, page) {
                 images: ["./img/cute-faces/1.JPG"],
                 id: "id-d34734fc-def8-4994-9c72-42937108fd75",
             },
+            {
+                title: "Little cow",
+                price: 5,
+                images: ["./img/cow/1.JPG"],
+                id: "id-383ce05d-d4aa-4f6d-95dd-1a97a1006453",
+            },
+            {
+                title: "Girl Power",
+                price: 5,
+                images: ["./img/girl-power/1.JPG"],
+                id: "id-d8d41cc9-6824-4f6f-ab3a-41393f439138",
+            },
+            {
+                title: "Strawberry milk",
+                price: 5,
+                images: ["./img/strawberry-milk/1.JPG"],
+                id: "id-32b7184d1-5a63-4a75-a93f-515e1bd5b43e",
+            },
         ];
     });
 }
